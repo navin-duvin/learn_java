@@ -1,0 +1,146 @@
+                    Advance java
+
+Access modifiers
+---------------
+    public
+    private
+    protected
+
+
+constructor:
+-----------
+constructor name must be class name
+
+        class car{//object
+            int speed;
+            String color;
+
+            car(){//default constructor
+                System.out.println("default-constructor");
+            }
+            car(int s,String c){// two parameter constructor
+                speed = s;
+                color =c;
+                System.out.println("2 parameter constructor:speed" +' '+s);
+                System.out.println("2 parameter constructor:color" +' '+c);
+            }
+            car(int sp){ // single parameter constructor
+                speed=sp;
+                System.out.println("1 parameter constructor:" +' '+sp);
+            }
+
+            void run(){ // car class method
+                System.out.println("car is running");
+            }
+
+        }
+
+method overloading
+
+            //System.out.println("method overloading with 1 paramter:" +' '+ add(2));//method overloading
+            //System.out.println("method overloading with 2 paramter:" +' '+ add(2,3.6));//method overloading
+        }
+
+        public static int add(){
+            return 0;
+        }
+        public static  int add(int num1){
+            return num1;
+        }
+        public static int add(int num1,int num2){
+            return num1 + num2;
+        }
+        public static double add(int num1,double num2){
+            return num1 + num2;
+        }
+
+This keyword
+
+    class This{
+        int num;
+        This(int num){
+            this.num=num;
+        }
+    }
+
+static keyword
+
+    class student{
+      int roll_no;
+      String Dept;
+      static String HOD="head";
+
+      static {
+        HOD = "HOD";
+      }
+    }
+
+
+inheritance
+
+class human{ //super,parent class
+    human(){
+        System.out.println("human class default constructor");
+    }
+    void test(){
+        System.out.println("human class test method");
+    }
+}
+class person extends human{ //child,sub class
+    person(){
+        System.out.println("person class default constructor");
+    }
+}
+class devil extends human{ // grand child
+    devil(){
+       System.out.println("devil class default constructor");
+    }
+}
+/*class puthusu extends devil,angel{ //multi level inheritance not supported in java
+}
+*/
+public class inheritance{
+
+      public static void main(String[] args){
+        human child= new human();
+
+        person boy = new person();
+        boy.test();
+
+        devil dev = new devil();
+        dev.test();
+
+}
+}
+
+
+method overriding
+     class a{
+       void method1(){
+         System.out.println("a class");
+       }
+     }
+
+     class b extends a{//child,sub class has more power
+       void method1(){
+         System.out.println("b class");
+       }
+     }
+
+     public class Main{
+           public static void main(String[] args){
+               a obj = new a();
+               a.method1();
+               b obj1 = new b();
+               b.method1();
+
+           }
+     }
+
+polymorphism
+    1.static polymorphism -- method overloading ---compile time
+    2.dynamic polymorphism -- method overriding --run time
+
+
+abstract class
+
